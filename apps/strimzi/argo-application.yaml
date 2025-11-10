@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://strimzi.io/charts/            # or the repoURL you added to argocd
     chart: strimzi-kafka-operator
-    targetRevision: 0.41.0                         # pick a chart version
+    targetRevision: 0.40.2                         # pick a chart version
     helm:
       releaseName: strimzi
       values: |
