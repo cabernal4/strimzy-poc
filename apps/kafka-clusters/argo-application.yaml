@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/cabernal4/strimzy-poc   # or GitHub URL
     path: apps/kafka-clusters
-    targetRevision: master
+    targetRevision: main
   destination:
     server: https://kubernetes.default.svc
     namespace: kafka
