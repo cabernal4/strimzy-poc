@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: git://<address>:9418/strimzi-gitops.git   # or GitHub URL
+    repoURL: https://github.com/cabernal4/strimzy-poc   # or GitHub URL
     path: apps/kafka-clusters
     targetRevision: master
   destination:
