@@ -18,11 +18,12 @@ spec:
         deleteClaim: false
         kraftMetadata: shared
 ---
-
 apiVersion: kafka.strimzi.io/v1beta2
 kind: Kafka
 metadata:
   name: my-cluster
+  labels:
+    strimzi.io/node-pool: dual-role   # <-- required in KRaft mode
 spec:
   kafka:
     version: 4.1.0
