@@ -6,12 +6,12 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/cabernal4/strimzy-poc   # or GitHub URL
-    path: apps/kafka-clusters
-    targetRevision: main
+    repoURL: https://github.com/cabernal4/strimzy-poc
+    path: apps/kafka-clusters          # Path where Kafka-single-node.yaml lives
+    targetRevision: main               # Branch or commit to deploy
   destination:
     server: https://kubernetes.default.svc
-    namespace: kafka
+    namespace: kafka                   # Must match Kafka/NodePool namespace
   syncPolicy:
     automated:
       prune: true
