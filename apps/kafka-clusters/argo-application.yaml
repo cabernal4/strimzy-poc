@@ -7,11 +7,11 @@ spec:
   project: default
   source:
     repoURL: https://github.com/cabernal4/strimzy-poc
-    path: apps/kafka-clusters          # Path where Kafka-single-node.yaml lives
-    targetRevision: main               # Branch or commit to deploy
+    path: apps/kafka-clusters         # Path where Kafka-single-node.yaml lives
+    targetRevision: main
   destination:
     server: https://kubernetes.default.svc
-    namespace: kafka                   # Must match Kafka/NodePool namespace
+    namespace: kafka                  # Must match Kafka CRs
   syncPolicy:
     automated:
       prune: true

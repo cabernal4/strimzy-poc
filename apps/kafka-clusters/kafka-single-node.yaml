@@ -2,9 +2,9 @@ apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaNodePool
 metadata:
   name: dual-role
-  namespace: kafka                # Make sure this matches your deployment namespace
+  namespace: kafka                     # Must match the operator's watched namespace
   labels:
-    strimzi.io/cluster: my-cluster
+    strimzi.io/cluster: my-cluster     # Must match the Kafka cluster name
 spec:
   replicas: 1
   roles:
@@ -23,9 +23,9 @@ apiVersion: kafka.strimzi.io/v1beta2
 kind: Kafka
 metadata:
   name: my-cluster
-  namespace: kafka                # Make sure this matches your deployment namespace
+  namespace: kafka                     # Must match node pool and operator
   labels:
-    strimzi.io/node-pool: dual-role
+    strimzi.io/node-pool: dual-role    # Must exactly match the KafkaNodePool name
 spec:
   kafka:
     version: 4.1.0
