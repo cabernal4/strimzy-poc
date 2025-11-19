@@ -1,0 +1,28 @@
+apiVersion: kafka.strimzi.io/v1beta2
+kind: Kafka
+metadata:
+  name: my-cluster
+  namespace: kafka
+  annotations:
+    strimzi.io/kraft: "true"
+spec:
+  kafka:
+    version: 3.7.0
+    replicas: 1
+    listeners:
+      - name: plain
+        port: 9092
+        type: internal
+        tls: false
+    config:
+      process.roles: broker,controller
+      node.id: 0
+      controller.quorum.voters: "0@my-cluster-kafka-0.my-cluster-kafka-brokers.kafka.svc:9093"
+      inter.broker.listener.name: "BROKER"
+      listener.security.protocol.map: "CONTROLLER:PLAINTEXT,BROKER:PLAINTEXT"
+      controller.listener.names: "CONTROLLER"
+    storage:
+      type: ephemeral
+  entityOperator:
+    topicOperator: {}
+    userOperator: {}
